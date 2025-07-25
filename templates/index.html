@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Descarga de Videos</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    label { display: block; margin-top: 1em; }
+    input, select { width: 100%; padding: 0.5em; margin-top: 0.2em; }
+    button { margin-top: 2em; padding: 0.7em 2em; }
+  </style>
+</head>
+<body>
+  <h1>Descargar desde Playlist / Video</h1>
+  <form action="/download" method="post">
+    <label for="url">URL del video o playlist:</label>
+    <input type="text" id="url" name="url" required />
+
+    <label for="playlist_items">Ítems de la playlist (ej: 1:3,5,7):</label>
+    <input type="text" id="playlist_items" name="playlist_items" />
+
+    <label for="dateafter">Fecha desde (YYYYMMDD o today-1week):</label>
+    <input type="text" id="dateafter" name="dateafter" />
+
+    <label for="datebefore">Fecha hasta (YYYYMMDD o today-1week):</label>
+    <input type="text" id="datebefore" name="datebefore" />
+
+    <label for="min_filesize">Tamaño mínimo (ej: 10M, 500K):</label>
+    <input type="text" id="min_filesize" name="min_filesize" />
+
+    <label for="max_filesize">Tamaño máximo (ej: 100M, 5G):</label>
+    <input type="text" id="max_filesize" name="max_filesize" />
+
+    <label for="max_downloads">Máximo de descargas:</label>
+    <input type="number" id="max_downloads" name="max_downloads" />
+
+    <label for="playlist_random">
+      <input type="checkbox" id="playlist_random" name="playlist_random" />
+      Descargar en orden aleatorio
+    </label>
+
+    <label for="yes_playlist">
+      <input type="checkbox" id="yes_playlist" name="yes_playlist" />
+      Descargar toda la playlist (si aplica)
+    </label>
+
+    <label for="no_playlist">
+      <input type="checkbox" id="no_playlist" name="no_playlist" />
+      Descargar solo el video (ignorar playlist)
+    </label>
+
+    <button type="submit">Iniciar Descarga</button>
+  </form>
+</body>
+</html>
